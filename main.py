@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import flask
 from threading import Thread
 from highrise.__main__ import *  # Ensure the necessary imports from highrise
 import time
