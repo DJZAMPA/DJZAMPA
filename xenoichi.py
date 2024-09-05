@@ -950,7 +950,7 @@ class xenoichi(BaseBot):
 
             if user.username in self.vip:
                 await self.highrise.teleport(user.id, self.vip_pos)
-            await self.highrise.chat(f"✨Welcome to ✨Find A Cutie💗  yall are welcome to enjoy and chill🌟 no begs pls, 💫if u want to be mod or smth pm owner and ✨Find A Cutie💗 Vip is 1k💫🌟☺️ enjoy and chill and vibe if need to report report mods or owners 💫💫⭐✨")
+            await self.highrise.chat(f"✨Welcome to ✨Find A Cutie💗  yall are welcome to enjoy and chill🌟 no begs pls, 💫if u want to be mod or smth pm owner and ✨Find A Cutie💗 Vip is 100g          mod is 1k ❤️💫🌟☺️ enjoy and chill and vibe if need to report report mods or owners 💫💫⭐✨")
             ran = random.randint(1, 73)
             emote_text, emote_time = await self.get_emote_df(ran)
             await self.highrise.send_emote(emote_text, self.highrise.my_id)
