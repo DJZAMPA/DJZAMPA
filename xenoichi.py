@@ -45,6 +45,9 @@ class xenoichi(BaseBot):
     async def on_chat(self, user: User, message: str) -> None:
 
             if user.username == "DJ._.ZAMPA" or user.username == "ROSIE.LO":
+    # ... your code to execute if either user is authorized
+else:
+    # ... code to handle unauthorized users
 
             if message.startswith("/emall"):
 
