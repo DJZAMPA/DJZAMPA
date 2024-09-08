@@ -44,7 +44,7 @@ class xenoichi(BaseBot):
 
     async def on_chat(self, user: User, message: str) -> None:
 
-        if user.username in ["DJ._.ZAMPA", "ROSIE.LO","LightSpeed187","gotmyheartflipping"]:
+        if user.username in ["DJ._.ZAMPA", "ROSIE.LO","LightSpeed187","gotmyheartflipping","GeminiSweet",vTrilogy"]:
 
             if message.startswith("/emall"):
 
