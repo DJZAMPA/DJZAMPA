@@ -571,17 +571,6 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"mute error: {e}")
 
-
-        if message.lower().lstrip().startswith(("-spam", "!spam")):
-            await self.highrise.chat("#NSS #NSS")   
-        if message.lower().lstrip().startswith(("-spam", "!spam")):
-            await self.highrise.chat("#NSS #NSS")   
-        if message.lower().lstrip().startswith(( "!spam", "!spam")):
-            await self.highrise.chat("#NSS #NSS")
-
-        if message.lower().lstrip().startswith(( "!spam", "!spam")):
-            await self.highrise.chat("#NSS #NSS")
-
         if message.startswith("/emote"):
             try:
                 target_number = message.split("/emote ", 1)[1].strip().lower()
