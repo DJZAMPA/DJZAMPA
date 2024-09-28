@@ -978,7 +978,7 @@ class xenoichi(BaseBot):
 
     async def on_user_join(self, user: User, Position):
 
-        print(fWelcome {username})
+        print(f"Welcome {username}")
 
         try:
 
