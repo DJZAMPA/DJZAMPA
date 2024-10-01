@@ -411,7 +411,7 @@ class xenoichi(BaseBot):
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
-            elif message.startswith("/vtpos"):
+            elif message.startswith("/guestpos"):
 
                 self.vt_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("vt position set!")
