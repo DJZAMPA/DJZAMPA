@@ -27,7 +27,7 @@ class xenoichi(BaseBot):
         self.vip_pos = None
         self.dj_pos = None
         self.down_pos = None
-        self.mod_pos = None
+        self.vt_pos = None
 
         self.plines = None
 
@@ -340,13 +340,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"error televip: {e}")
 
-            elif message.lower().startswith("/telemod"):
+            elif message.lower().startswith("/vt"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /telemod @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: /vt @{username}.")
                         return
 
                     target_username = parts[1]
@@ -355,10 +355,10 @@ class xenoichi(BaseBot):
                         return
 
                     target_username = target_username[1:]
-                    await self.teleport_target_user_to_loc(target_username, self.mod_pos)
+                    await self.teleport_target_user_to_loc(target_username, self.vt_pos)
 
                 except Exception as e:
-                    print(f"error telemod: {e}")
+                    print(f"error vt: {e}")
 
             elif message.lower().startswith("/listvip"):
 
@@ -411,10 +411,10 @@ class xenoichi(BaseBot):
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
-            elif message.startswith("/modpos"):
+            elif message.startswith("/vtpos"):
 
-                self.mod_pos = await self.get_actual_pos(user.id)
-                await self.highrise.chat("mod position set!")
+                self.vt_pos = await self.get_actual_pos(user.id)
+                await self.highrise.chat("vt position set!")
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
