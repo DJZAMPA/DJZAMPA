@@ -975,16 +975,15 @@ class xenoichi(BaseBot):
                 print(f"{e}")
 
 
-
     async def on_user_join(self, user: User, Position):
 
-        print(f"Welcome {username}")
+        print(f"{user.username} joined the room standing at {Position}")
 
         try:
 
             if user.username in self.vip:
                 await self.highrise.teleport(user.id, self.vip_pos)
-            await self.highrise.chat(f"Welcome {username} Tip the jar 100g for vip ")
+            await self.highrise.chat(f¡Bienvenidos a La Matrix! desconéctate de la realidad y disfruta una experiencia fuera de este plano. ¡Pásala rico!")
             ran = random.randint(1, 73)
             emote_text, emote_time = await self.get_emote_df(ran)
             await self.highrise.send_emote(emote_text, self.highrise.my_id)
