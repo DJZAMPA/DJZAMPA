@@ -616,9 +616,9 @@ class xenoichi(BaseBot):
         if message.lower().lstrip().startswith(( "!spam", "!spam")):
             await self.highrise.chat("#NSS #NSS")
 
-        if message.startswith("/emote"):
+        if message.startswith("/e"):
             try:
-                target_number = message.split("/emote ", 1)[1].strip().lower()
+                target_number = message.split("/e ", 1)[1].strip().lower()
 
                 if target_number.isdigit():
                     target = int(target_number)
@@ -641,7 +641,7 @@ class xenoichi(BaseBot):
             except Exception as e:
                 print(f"An error occurred: {e}")
 
-        elif message.startswith("/stop-emote"):
+        elif message.startswith("/stop"):
             # Stop the emote loop for the player
             try:
                 if self.active_emote_loops[user.id]:
