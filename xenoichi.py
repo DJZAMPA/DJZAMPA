@@ -616,9 +616,9 @@ class xenoichi(BaseBot):
         if message.lower().lstrip().startswith(( "!spam", "!spam")):
             await self.highrise.chat("#NSS #NSS")
 
-        if message.startswith("loop"):
+        if message.startswith("/emote"):
             try:
-                target_number = message.split("/loop ", 1)[1].strip().lower()
+                target_number = message.split("/emote ", 1)[1].strip().lower()
 
                 if target_number.isdigit():
                     target = int(target_number)
