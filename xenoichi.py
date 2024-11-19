@@ -46,7 +46,7 @@ class xenoichi(BaseBot):
     async def on_chat(self, user: User, message: str) -> None:
 
 
-        if user.username in {"DJ._.ZAMPA", "XxE1g", "KICK_X2", "_SnowQueen_"}:
+        if user.username in {"DJ._.ZAMPA", "Choko_Boy_Raj", "KICK_X2", "itz._Sanki._ ", "x_BROKEN_AFK_145"}:
     # Do something if the username matches
 
 
@@ -616,9 +616,9 @@ class xenoichi(BaseBot):
         if message.lower().lstrip().startswith(( "!spam", "!spam")):
             await self.highrise.chat("#NSS #NSS")
 
-        if message.startswith("/e"):
+        if message.startswith("loop"):
             try:
-                target_number = message.split("/e ", 1)[1].strip().lower()
+                target_number = message.split("/loop ", 1)[1].strip().lower()
 
                 if target_number.isdigit():
                     target = int(target_number)
