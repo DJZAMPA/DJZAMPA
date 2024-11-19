@@ -76,13 +76,13 @@ class xenoichi(BaseBot):
                 await self.highrise.chat(f"\nUser Commands:\n emote\n/stop-emote\n/about\n\nAdmin Commands:\n/tip\n/addvip\n/removevip\n/vippos\n/botpos\n/djpos\n/televip\n/teledj\n/pos1\n/pos2\n/create\n/clear-df\n/clear-vip\n/all\n/plines")
 
 
-            elif message.lower().startswith("/tip-all"):
+            elif message.lower().startswith("!tip-all"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /tip-all {tip amount}.")
+                        await self.highrise.chat("Invalid command. Usage: !tip-all {tip amount}.")
                         return
 
                     tip_amount_str = parts[1]
@@ -145,12 +145,12 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"error tipping all: {e}")
 
-            elif message.lower().startswith("/tip"):
+            elif message.lower().startswith("!tip"):
 
                 try:
                     parts = message.split(" ")
                     if len(parts) != 3:
-                        await self.highrise.chat("Invalid command. Usage: /tip @{username} {tip amount}.")
+                        await self.highrise.chat("Invalid command. Usage: !tip @{username} {tip amount}.")
                         return
 
                     target_username = parts[1]
@@ -217,13 +217,13 @@ class xenoichi(BaseBot):
                     await self.highrise.chat(f"Error tipping: {str(e)}")
 
 
-            elif message.startswith("/addvip"):
+            elif message.startswith("!addvip"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /addvip @{username}")
+                        await self.highrise.chat("Invalid command. Usage: !addvip @{username}")
                         return
 
                     target_username = parts[1]
@@ -254,12 +254,12 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"add_vip error: {e}")
 
-            elif message.startswith("/removevip"):
+            elif message.startswith("!removevip"):
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /removevip @{username}")
+                        await self.highrise.chat("Invalid command. Usage: !removevip @{username}")
                         return
 
                     target_username = parts[1]
@@ -279,13 +279,13 @@ class xenoichi(BaseBot):
                     print(f"An error occurred: {e}")
 
 
-            elif message.lower().startswith("/teledown"):
+            elif message.lower().startswith("!teledown"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /teledown @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !teledown @{username}.")
                         return
 
                     target_username = parts[1]
@@ -300,13 +300,13 @@ class xenoichi(BaseBot):
                     print(f"error teledown: {e}")
 
 
-            elif message.lower().startswith("/teledj"):
+            elif message.lower().startswith("!teledj"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /teledj @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !teledj @{username}.")
                         return
 
                     target_username = parts[1]
@@ -320,13 +320,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"error teledj: {e}")
 
-            elif message.lower().startswith("/televip"):
+            elif message.lower().startswith("!televip"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /televip @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !televip @{username}.")
                         return
 
                     target_username = parts[1]
@@ -340,13 +340,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"error televip: {e}")
 
-            elif message.lower().startswith("/vt"):
+            elif message.lower().startswith("!vt"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /vt @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !vt @{username}.")
                         return
 
                     target_username = parts[1]
@@ -360,7 +360,7 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"error vt: {e}")
 
-            elif message.lower().startswith("/listvip"):
+            elif message.lower().startswith("!listvip"):
 
                 try:
                     if self.vip:
@@ -390,28 +390,28 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"list_vip_error : {e}")
 
-            elif message.startswith("/vippos"):
+            elif message.startswith("!vippos"):
 
                 self.vip_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("VIP position set!")
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
-            elif message.startswith("/downpos"):
+            elif message.startswith("!downpos"):
 
                 self.down_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("down position set!")
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
-            elif message.startswith("/djpos"):
+            elif message.startswith("!djpos"):
 
                 self.dj_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("DJ position set!")
                 await asyncio.sleep(1)
                 self.save_loc_data()
 
-            elif message.startswith("/guestpos"):
+            elif message.startswith("!guestpos"):
 
                 self.vt_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("vt position set!")
@@ -419,7 +419,7 @@ class xenoichi(BaseBot):
                 self.save_loc_data()
 
 
-            elif message.startswith("/botpos"):
+            elif message.startswith("?botpos"):
 
                 self.bot_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("Bot position set!")
@@ -433,21 +433,21 @@ class xenoichi(BaseBot):
                 await self.highrise.chat(f"My bank has {wallet[0].amount} {wallet[0].type}.")
 
 
-            elif message.startswith("/pos1"):
+            elif message.startswith("!pos1"):
 
                 self.pos1 = await self.get_actual_pos(user.id)
                 await self.highrise.chat("Position 1 set.")
 
-            elif message.startswith("/pos2"):
+            elif message.startswith("!pos2"):
 
                 self.pos2 = await self.get_actual_pos(user.id)
                 await self.highrise.chat("Position 2 set.")
 
-            elif message.startswith("/check"):
+            elif message.startswith("!check"):
 
                 await self.highrise.chat(f"{self.on_dance_floor}")
 
-            elif message.startswith("/create"):
+            elif message.startswith("?create"):
 
                 if self.pos1 and self.pos2:
                     await self.create_dance_floor()
@@ -457,12 +457,12 @@ class xenoichi(BaseBot):
                 else:
                     await self.highrise.chat("Please set both Position 1 and Position 2 first.")
 
-            elif message.startswith("/plines"):
+            elif message.startswith("!plines"):
 
                 try:
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /plines {number}")
+                        await self.highrise.chat("Invalid command. Usage: !plines {number}")
                         return
 
                     number_input = parts[1]
@@ -484,30 +484,30 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"mng error: {e}")
 
-            elif message.startswith("/stop-plines"):
+            elif message.startswith("!stop-plines"):
 
                 await self.highrise.chat("Stopping Pick-up lines. Please wait.")
                 self.plines = False
 
-            elif message.startswith("/clear-df"):
+            elif message.startswith("!clear-df"):
 
                 self.on_dance_floor = []
                 await self.highrise.chat("Dance floor/s removed.")
                 self.save_loc_data()
 
-            elif message.startswith("/clear-vip"):
+            elif message.startswith("?clear-vip"):
 
                 self.vip = []
                 await self.highrise.chat("VIP list cleared.")
                 self.save_vip()
 
-            elif message.lower().startswith("/kick"):
+            elif message.lower().startswith("!kick"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /kick @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !kick @{username}.")
                         return
 
                     target_username = parts[1]
@@ -523,13 +523,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"kick error: {e}")
 
-            elif message.lower().startswith("/ban"):
+            elif message.lower().startswith("!ban"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 3:
-                        await self.highrise.chat("Invalid command. Usage: /ban @{username} {length}.")
+                        await self.highrise.chat("Invalid command. Usage: !ban @{username} {length}.")
                         return
 
                     target_username = parts[1]
@@ -553,13 +553,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"ban error: {e}")
 
-            elif message.lower().startswith("/unban"):
+            elif message.lower().startswith("!unban"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 2:
-                        await self.highrise.chat("Invalid command. Usage: /unban @{username}.")
+                        await self.highrise.chat("Invalid command. Usage: !unban @{username}.")
                         return
 
                     target_username = parts[1]
@@ -575,13 +575,13 @@ class xenoichi(BaseBot):
                 except Exception as e:
                     print(f"unban error: {e}")
 
-            elif message.lower().startswith("/mute"):
+            elif message.lower().startswith("!mute"):
 
                 try:
 
                     parts = message.split(" ")
                     if len(parts) != 3:
-                        await self.highrise.chat("Invalid command. Usage: /mute @{username} {length}")
+                        await self.highrise.chat("Invalid command. Usage: !mute @{username} {length}")
                         return
 
                     target_username = parts[1]
@@ -616,9 +616,9 @@ class xenoichi(BaseBot):
         if message.lower().lstrip().startswith(( "!spam", "!spam")):
             await self.highrise.chat("#NSS #NSS")
 
-        if message.startswith("/emote"):
+        if message.startswith("!emote"):
             try:
-                target_number = message.split("/emote ", 1)[1].strip().lower()
+                target_number = message.split("!emote ", 1)[1].strip().lower()
 
                 if target_number.isdigit():
                     target = int(target_number)
@@ -641,7 +641,7 @@ class xenoichi(BaseBot):
             except Exception as e:
                 print(f"An error occurred: {e}")
 
-        elif message.startswith("/stop"):
+        elif message.startswith("!stop"):
             # Stop the emote loop for the player
             try:
                 if self.active_emote_loops[user.id]:
@@ -863,7 +863,7 @@ class xenoichi(BaseBot):
 
     async def on_whisper(self, user: User, message: str):
 
-            if message.startswith("/chat"):
+            if message.startswith("!chat"):
 
                 chat_message = message.replace("/chat", "", 1)
                 await self.highrise.chat(f"{chat_message}")
