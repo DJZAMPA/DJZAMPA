@@ -419,7 +419,7 @@ class xenoichi(BaseBot):
                 self.save_loc_data()
 
 
-            elif message.startswith("?botpos"):
+            elif message.startswith("!bot"):
 
                 self.bot_pos = await self.get_actual_pos(user.id)
                 await self.highrise.chat("Bot position set!")
@@ -427,7 +427,7 @@ class xenoichi(BaseBot):
                 await self.highrise.teleport(self.highrise.my_id, self.bot_pos)
                 self.save_loc_data()
 
-            elif message.startswith("/bank"):
+            elif message.startswith("!bank"):
 
                 wallet = (await self.highrise.get_wallet()).content
                 await self.highrise.chat(f"My bank has {wallet[0].amount} {wallet[0].type}.")
@@ -447,7 +447,7 @@ class xenoichi(BaseBot):
 
                 await self.highrise.chat(f"{self.on_dance_floor}")
 
-            elif message.startswith("?create"):
+            elif message.startswith("!create"):
 
                 if self.pos1 and self.pos2:
                     await self.create_dance_floor()
