@@ -52,10 +52,12 @@ class xenoichi(BaseBot):
 
 
 
-            if message.startswith("all"):
+
+
+            if message.startswith("-all"):
 
                 try:
-                    target_number = message.split("all ", 1)[1].strip().lower()
+                    target_number = message.split("-all ", 1)[1].strip().lower()
                     await self.highrise.walk_to(self.bot_pos)
 
                     if target_number.isdigit():
@@ -72,7 +74,7 @@ class xenoichi(BaseBot):
                 except Exception as e:
                         print(f"An error occurred: {e}" )
 
-            if message.startswith("help"):
+            if message.startswith("ididhd"):
                 await self.highrise.chat(f"\nUser Commands:\n emote\n/stop-emote\n/about\n\nAdmin Commands:\n/tip\n/addvip\n/removevip\n/vippos\n/botpos\n/djpos\n/televip\n/teledj\n/pos1\n/pos2\n/create\n/clear-df\n/clear-vip\n/all\n/plines")
 
 
